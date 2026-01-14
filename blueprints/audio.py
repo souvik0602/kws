@@ -3,24 +3,26 @@ import subprocess
 import shutil
 from flask import Blueprint, render_template, request, jsonify
 
-try:
-    from .KWS_V_bng.KWS_prediction import predict_keyword
-    from .KWS_V_man.KWS_prediction import predict_keyword_man
-    from .KWS_V_miz.KWS_prediction import predict_keyword_miz
-    from .KWS_V_hin.KWS_prediction import predict_keyword_hin
-except ImportError as e:
-    predict_keyword = None
-    predict_keyword_man = None
-    predict_keyword_miz = None
-    predict_keyword_hin = None
-    print("KWS ML modules not available:", e)
+
+predict_keyword = None
+predict_keyword_man = None
+predict_keyword_miz = None
+predict_keyword_hin = None
+
 
 audio_bp = Blueprint('audio', __name__)
 
 # Create uploads directory 
-UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'uploads')
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+# UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'uploads')
+# if not os.path.exists(UPLOAD_FOLDER):
+#     os.makedirs(UPLOAD_FOLDER)
+
+#for-vercel deployment
+BASE_TMP_DIR = "/tmp"
+UPLOAD_FOLDER = os.path.join(BASE_TMP_DIR, "uploads")
+
+def ensure_upload_folder():
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @audio_bp.route('/language/<lang>')
 def language(lang):
@@ -33,6 +35,7 @@ def language_independent(lang):
 
 @audio_bp.route('/api/analyze_audio/<lang>', methods=['POST'])
 def analyze_audio_language(lang):
+    ensure_upload_folder()
     if 'audio' not in request.files:
         return jsonify({'error': 'No audio file provided'}), 400
     
