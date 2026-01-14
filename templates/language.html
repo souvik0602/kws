@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ lang }} | End-to-End Spoken Keyword Spotting{% endblock %}
+{% block extra_head %}
+    <script src="{{ url_for('static', filename='audio.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<!-- Loading Spinner -->
+<div class="spinner-overlay" id="loading-spinner">
+    <div class="spinner"></div>
+</div>
+
+<div class="card">
+    <h3>
+        {% if mode == "dependent" %}
+            Selected Language Dependent: <br> {{ lang }}
+        {% else %}
+             Selected Language Independent :<br> {{ lang }}
+        {% endif %}
+    </h3>
+    <div id="status" class="status-msg"></div>
+<div class="audio-sections">
+    <div class="record-section">
+        <h4>Record Voice / Audio</h4>
+        <div class="record-controls">
+            <button onclick="startRecording()">Start</button>
+            <button onclick="pauseRecording()">Pause</button>
+            <button onclick="stopRecording()">Stop</button>
+            <span id="timer" style="margin-left:10px;font-weight:bold;display:none;">00:00</span>
+        </div>
+    </div>
+<p>or</p>
+    <div class="upload-section">
+        <h4>Upload Audio (.wav or .mp3)</h4>
+        <form id="uploadForm" onsubmit="submitUploadedFile(event, '{{ lang | lower }}', '{{ mode }}')">
+            <input type="file" id="audiofile" accept=".wav,.mp3" onchange="previewSelectedFile(event)">
+        </form>
+    </div>
+</div>
+
+
+    <div class="card audio-preview-card" id="preview-card" style="display:none; margin-top:18px;">
+        <h4>Audio Preview</h4>
+        <audio id="audio-preview" controls style="width:100%; display:block; margin-bottom:10px;"></audio>
+        <div class="audio-meta">
+            <span id="audio-filename"></span>
+            <span id="audio-size" style="margin-left:12px; color:#666; font-size:0.95em;"></span>
+        </div>
+        <br>
+        <div class="record-controls">
+    <button onclick="submitAudio('{{ lang | lower }}', '{{ mode }}')">
+        Submit Audio
+    </button>
+    </div>
+    </div>
+    <br>
+    <div id="output-section" class="output-section" style="display:none;">
+        <label>Identified Keyword: <span id="model-output"></span></label><br>
+        <label>Confidence score: <span id="confidence-score"></span></label>
+    </div>
+    <div class="action-row">
+        <button type="button" class="reset-btn" onclick="resetAudioUI()">Reset</button>
+        <a href="{{ url_for('main.index') }}" class="back-btn">Home</a>
+        
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <title>{% block title %}End-to-End Spoken Keyword Spotting{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+   <nav class="navbar">
+    <div class="nav-header">
+        <div class="nav-logo">
+            <img src={{ url_for('static', filename='Logo.png') }} alt="SB" class="custom-logo" width="80" height="80" decoding="async" />
+        </div>
+        <div class="nav-title">
+    <a href="#" target="_blank" rel="noopener noreferrer" class="nav-title-link">
+        Spoken Keyword Spotting System <br>
+        <span class="nav-subtitle">(Souvik's Creation)</span>
+    </a>
+</div>
+
+    </div>
+
+    <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li><a href="{{ url_for('main.about') }}">About Us</a></li>
+        <li><a href="{{ url_for('main.contact') }}">Contact Us</a></li>
+    </ul>
+</nav>
+
+
+    <div class="container">
+
+        {% block content %}{% endblock %}
+        <footer class="footer">
+            <hr>
+            <p>&copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Souvik Banik | All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+    if (!navToggle || !navLinks) return;
+    navToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+    });
+    navToggle.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navLinks.classList.toggle('active');
+        }
+    });
+});
+</script>
+</html>

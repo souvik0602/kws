@@ -1,0 +1,728 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    background: #f3f6fd;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.navbar {
+    background: #16397e;
+    padding: 0 0 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    position: relative; 
+}
+.nav-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.nav-logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.nav-title {
+    color: #d1d7e0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    max-width: calc(100% - 220px); 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #a3adc1;
+}
+
+.nav-title-link {
+    color: #d1d7e0;
+    text-decoration: none;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    display: inline-block;
+    transition: color 0.15s ease-in-out;
+}
+
+.custom-logo {
+    max-height: 70px;
+    width: auto;
+    display: block;
+}
+.nav-logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 30px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.nav-links li {
+    display: inline;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background .16s;
+}
+.nav-links a:hover {
+    background: #2958b8;
+    color: #ffd400;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 34px rgba(40,60,110,.13);
+    padding: 38px 38px 27px 38px;
+}
+header {
+    text-align: center;
+}
+header h1 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    letter-spacing: 0.2px;
+}
+header .subtitle {
+    font-size: 1rem;
+    color: #5970a7;
+    margin-bottom: 14px;
+}
+header h2 {
+    font-size: 1.15rem;
+    margin: 12px 0 20px 0;
+    color: #2958b8;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.audio-sections {
+    display: flex;
+    justify-content: space-between; /* Adds space between the two sections */
+    align-items: stretch;
+    gap: 10px; 
+    margin-top: 10px;
+    flex-wrap: wrap; 
+}
+
+.record-section,
+.upload-section {
+    flex: 1; 
+    min-width: 300px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.record-controls button {
+    margin-right: 5px;
+}
+
+.status-msg {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.94em;
+    margin-top: 25px;
+}
+.selection-section {
+    text-align: center;
+    margin: 34px 0;
+}
+.selection-section h3 { margin-bottom: 15px; }
+.lang-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.lang-buttons a, .lang-buttons button {
+    background: #2958b8;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 11px 34px;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+.lang-buttons a:hover, .lang-buttons button:hover {
+    background: #ffd400;
+    color: #143d67;
+}
+
+
+.lang-select-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.lang-select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #294b8f;
+    background: #ffffff;
+    color: #16397e;
+    font-size: 1em;
+}
+.lang-select-btn {
+    background: #2958b8;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.lang-select-btn:hover {
+    background: #ffd400;
+    color: #143d67;
+}
+
+
+@media (max-width: 1024px) {
+    .lang-select-form { width: 100%; justify-content: center; padding: 0 10px; box-sizing: border-box; }
+    .lang-select { max-width: 220px; width: 60%; }
+    .lang-select-btn { width: auto; }
+    .lang-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10px;
+}
+}
+.card {
+    background: #f9fcfe;
+    border-radius: 13px;
+    box-shadow: 0 2px 10px rgba(55, 100, 170, .11);
+    padding: 32px 23px;
+    margin-top: 22px;
+}
+.record-controls button {
+    margin: 0 8px 12px 0;
+    background: #28a57d;
+    color: #fff;
+    border-radius: 7px;
+    padding: 8px 23px;
+    font-size: 1em;
+    border: none;
+}
+.record-controls button:hover {
+    background: #19724f;
+    color: #ffd400;
+}
+
+.back-btn {
+    background: #666;
+    color: #fff;
+    padding: 8px 22px;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    margin-top: 16px;
+    display: inline-block;
+    transition: background .13s;
+    font-size: 1em;
+}
+.back-btn:hover { background: #143d67; color:#ffd400; }
+/* Reset button  */
+.reset-btn {
+    background: #d9534f;
+    color: #fff;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 7px;
+    margin-top: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.reset-btn:hover { background: #b0302a; color: #ffd400; }
+
+.action-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end; 
+}
+
+/* On small screens, stack the action buttons */
+@media (max-width: 600px) {
+    .action-row { flex-direction: column; align-items: stretch; }
+    .action-row .back-btn, .action-row .reset-btn { width: 100%; margin-left: 0; }
+}
+.output-section {
+    margin-top: 22px;
+}
+.output-section label {
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+.output-section span {
+    color: #1a54b1;
+    font-weight: 500;
+}
+.status-msg {
+    min-height: 24px;
+    margin-bottom: 10px;
+    color: #357e42;
+}
+
+
+/* Mobile Navigation toggle  */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+.nav-toggle span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+/* Mobile layout tweaks and nav adjustments */
+@media (max-width: 1024px) {
+    body {
+        font-size: 12px;
+    }
+    .nav-title {
+        position: static;
+        transform: none;
+        max-width: calc(100% - 100px); 
+        white-space: normal;
+        text-align: left;
+        font-size: 0.8rem;
+        padding-right: 40px; 
+    }
+    .nav-subtitle {
+        font-size: 0.85rem;
+        display: block;
+        text-align: left;
+        max-width: calc(100% - 100px); 
+    }
+    .custom-logo { max-height: 40px; }
+    .container {
+        max-width: 100%;
+        margin: 10px 15px 30px 15px;
+        padding: 20px 20px 25px 20px;
+    }
+    .card {
+        padding: 20px 16px;
+    }
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 12px 20px;
+    }
+    .nav-logo {
+        
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        padding: 0;
+        gap: 12px;
+        margin: 0;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links a {
+        display: block;
+        padding: 10px;
+        font-size: 1.15rem;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-toggle {
+        display: flex;
+        position: absolute;
+        top: 16px;
+        right: 25px;
+    }
+}
+
+/* Contact page  */
+.contact-section {
+    padding: 30px;
+}
+
+.contact-section h2 {
+    color: #16397e;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item h3 {
+    color: #2958b8;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-item p {
+    color: #555;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.contact-item a {
+    color: #2958b8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover {
+    color: #ffd400;
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #16397e;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2958b8;
+    outline: none;
+}
+
+.submit-btn {
+    background: #2958b8;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+    width: auto;
+}
+
+.submit-btn:hover {
+    background: #16397e;
+    color: #ffd400;
+}
+
+@media (max-width: 1024px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-section {
+        padding: 20px;
+    }
+}
+
+/* About page  */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-section h2 {
+    color: #16397e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-section h3 {
+    color: #2958b8;
+    margin: 20px 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.project-overview {
+    padding: 30px;
+}
+
+.overview-content {
+    color: #444;
+    line-height: 1.6;
+}
+
+.overview-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.overview-content li {
+    margin-bottom: 8px;
+}
+
+.team-section {
+    padding: 30px;
+}
+
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.member-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(55, 100, 170, .11);
+    transition: transform 0.2s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-image {
+    width: 100%;
+    height: 250px;
+    object-fit: fill;
+    display: block;
+}
+
+.member-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.member-info h4 {
+    color: #16397e;
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.member-info p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.designation {
+    color: #2958b8 !important;
+    font-weight: 500;
+}
+
+.department {
+    font-size: 0.85rem !important;
+}
+
+.guide .member-card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: 20px auto;
+    }
+    
+    .project-overview, .team-section {
+        padding: 20px;
+    }
+}
+
+/* Audio preview  */
+.audio-preview-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.audio-preview-card h4 {
+    margin-top: 0;
+    color: #16397e;
+}
+
+.audio-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 6px;
+    color: #666;
+}
+
+/* Loading Spinner */
+.spinner-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #2958b8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* improve usability on small screens */
+@media (max-width: 480px) {
+    /* Make action buttons full-width and easier to tap */
+    .record-controls button,
+    .lang-buttons a,
+    .lang-buttons button,
+    .back-btn,
+    .reset-btn,
+    .submit-btn,
+    #uploadForm button {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 8px 0;
+        padding: 12px 14px;
+    }
+
+    /* Stack record controls vertically */
+    .record-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Make file input and preview take full-width */
+    #audiofile {
+        width: 100%;
+    }
+
+    .audio-preview-card {
+        padding: 14px;
+    }
+
+    .audio-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 0.95em;
+    }
+
+    /* Reduce card padding and font sizes for narrow screens */
+    .card, .container {
+        padding: 16px;
+    }
+
+    header h1 { font-size: 1.25rem; }
+
+    .member-image { height: 160px; }
+
+    .nav-links a { padding: 10px; }
+}
+
+
+.nav-links, .nav-toggle span {
+    transition: all 0.3s ease;
+}

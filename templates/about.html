@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - End-to-End Spoken Keyword Spotting{% endblock %}
+
+{% block content %}
+<div class="about-section">
+    
+    <div class="card project-overview">
+        <h2>Project Overview</h2>
+        <div class="overview-content">
+            <p align="justify">
+               The primary objective of this project is to design and develop a <b>scalable and reliable Spoken Keyword Spotting (KWS) system</b>. In addition, the project seeks to deploy a <b>KWS-based healthcare information dissemination platform</b> that supports multiple Indian languages, including <b>Assamese, Bangla, Bodo, Manipuri, Hindi, Indian English, Mizo, Nagamese, and Nepali</b>.
+                A further objective of this initiative is the <b>development of a versatile speech corpus</b> for three North-East Indian languages—<b>Mizo, Nepali, and Nagamese</b>—to facilitate research and advancement in speech and language technologies.
+                
+
+            <h3>Deliverables</h3>
+            <ul>
+                <li><b>API for the Spoken Keyword Spotting (KWS) System</b></li>
+                <li><b>Localization of Health-related Information</b> in seven languages: Assamese, Bangla, Bodo, Manipuri, Mizo, Nagamese, and Nepali</li>
+                <li><b>Speech-based Health Information Dissemination System (HiDS)</b></li>
+                <li><b>Speech Corpora Development</b> — 150 hours each for Mizo, Nagamese, and Nepali</li>
+                <li><b>Data Curation</b> — Hindi and Indian English data from the Bhashini Project</li>
+                <li><b>Development of KWS</b> System for Hindi and Indian English</li>
+            </ul>
+            </div>
+    </div>
+
+   
+    <div class="card team-section">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+
+            <div class="members-grid">
+               
+                <div class="member-card">
+                    <img src={{ url_for('static', filename='photo.png') }} alt="Team Member 1 Photo" class="member-image">
+                    <div class="member-info">
+                        <h4>Souvik Banik</h4>
+                        <p class="designation">Project Engineer</p>
+                        <p class="department"></p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src={{ url_for('static', filename='photo.png') }} alt="Team Member 1 Photo" class="member-image">
+                    <div class="member-info">
+                        <h4>Sheldon Cooper</h4>
+                        <p class="designation">Physicist</p>
+                        <p class="department"></p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src={{ url_for('static', filename='photo.png') }} alt="Team Member 1 Photo" class="member-image">
+                    <div class="member-info">
+                        <h4>Saul Goodman</h4>
+                        <p class="designation">Attorney at Law</p>
+                        <p class="department"></p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src={{ url_for('static', filename='photo.png') }} alt="Team Member 1 Photo" class="member-image">
+                    <div class="member-info">
+                        <h4>Walter White</h4>
+                        <p class="designation">Professor</p>
+                        <p class="department"></p>
+                    </div>
+                </div>
+
+                
+               
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

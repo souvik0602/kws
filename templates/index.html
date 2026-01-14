@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | End-to-End Spoken Keyword Spotting{% endblock %}
+
+{% block content %}
+        <header>
+            <h1>Welcome to End-to-End Spoken Keyword Spotting Systems</h1>
+           
+        </header>
+<section class="selection-section">
+    <h3>Language Dependent</h3>
+    <div class="lang-buttons">
+        <a href="{{ url_for('audio.language', lang='bengali') }}">Bengali</a>
+        <a href="{{ url_for('audio.language', lang='manipuri') }}">Manipuri</a>
+        <a href="{{ url_for('audio.language', lang='mizoram') }}">Mizoram</a>
+    </div>
+</section>
+
+<section class="selection-section">
+    <h3>Language Independent</h3>
+    <div class="lang-buttons">
+        <a href="{{ url_for('audio.language_independent', lang='hindi') }}">Hindi</a>
+    </div>
+</section>
+
+{% endblock %}
